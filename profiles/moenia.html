@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>もえにゃ | TOKYO MIDNIGHT GIRLS CLUB</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0a0a0a;
+      color: #f0e8e0;
+      font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+      border-bottom: 1px solid #2a1a1a;
+    }
+
+    .site-title {
+      font-size: 13px;
+      letter-spacing: 6px;
+      color: #c8a0a0;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      padding: 16px 20px;
+      border-bottom: 1px solid #1a0a0a;
+    }
+
+    nav a {
+      color: #c8a0a0;
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 2px;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: #f0c0c0; }
+
+    /* プロフィール本体 */
+    .profile-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 24px;
+      display: flex;
+      gap: 48px;
+      align-items: flex-start;
+    }
+
+    .profile-photo {
+      flex-shrink: 0;
+      width: 220px;
+      height: 300px;
+      background: linear-gradient(160deg, #1a0f0f 0%, #2a1520 100%);
+      overflow: hidden;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.85) saturate(0.7);
+    }
+
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .photo-placeholder span {
+      font-size: 10px;
+      color: #3a2a2a;
+    }
+
+    .profile-info {
+      flex: 1;
+    }
+
+    .cast-name {
+      font-size: 26px;
+      color: #e8c0c0;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+
+    .cast-name-sub {
+      font-size: 10px;
+      color: #6a4a4a;
+      letter-spacing: 3px;
+      margin-bottom: 32px;
+    }
+
+    .profile-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 28px;
+    }
+
+    .profile-table tr {
+      border-bottom: 1px solid #1a0a0a;
+    }
+
+    .profile-table th {
+      text-align: left;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: #6a4a4a;
+      padding: 10px 16px 10px 0;
+      white-space: nowrap;
+      font-weight: normal;
+    }
+
+    .profile-table td {
+      font-size: 12px;
+      color: #c8a0a0;
+      padding: 10px 0;
+    }
+
+    .rank-badge {
+      display: inline-block;
+      background: #2a1a2a;
+      border: 1px solid #6a3a6a;
+      color: #c090c0;
+      font-size: 9px;
+      letter-spacing: 2px;
+      padding: 2px 8px;
+    }
+
+    .profile-comment {
+      font-size: 12px;
+      color: #a08080;
+      line-height: 1.9;
+      border-left: 2px solid #2a1a1a;
+      padding-left: 16px;
+      margin-bottom: 28px;
+    }
+
+    /* 謎①の仕掛け：白テキストSOS */
+    .hidden-sos {
+      color: #0a0a0a;
+      background: #0a0a0a;
+      font-size: 11px;
+      user-select: text;
+      cursor: default;
+      line-height: 1.6;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #6a4a4a;
+      text-decoration: none;
+      margin-top: 24px;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: #c8a0a0; }
+
+    footer {
+      text-align: center;
+      padding: 32px;
+      border-top: 1px solid #1a0a0a;
+      font-size: 9px;
+      color: #3a2a2a;
+      letter-spacing: 2px;
+      margin-top: 32px;
+    }
+
+    /* TRUE END後 */
+    .true-end-message {
+      display: none;
+      background: #0a1a0a;
+      border: 1px solid #1a4a1a;
+      padding: 14px 18px;
+      font-size: 11px;
+      color: #80c080;
+      letter-spacing: 1px;
+      line-height: 2;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="site-title">TOKYO MIDNIGHT GIRLS CLUB</div>
+  </header>
+
+  <nav>
+    <a href="../index.html">HOME</a>
+    <a href="../cast.html">GIRLS</a>
+    <a href="../blog/index.html">BLOG</a>
+  </nav>
+
+  <div class="profile-wrap">
+
+    <div class="profile-photo">
+      <img src="../img/moenya_ice.png" alt="もえにゃ">
+    </div>
+
+    <div class="profile-info">
+      <div class="cast-name">もえにゃ</div>
+      <div class="cast-name-sub">MOENIA &nbsp;&#x2715;&nbsp; CAST</div>
+
+      <table class="profile-table">
+        <tr>
+          <th>AGE</th>
+          <td>19</td>
+        </tr>
+        <tr>
+          <th>BIRTHDAY</th>
+          <td>0317</td>
+        </tr>
+        <tr>
+          <th>RANK</th>
+          <td><span class="rank-badge">PLATINUM</span></td>
+        </tr>
+        <tr>
+          <th>HOBBY</th>
+          <td>映画・お菓子作り</td>
+        </tr>
+        <tr>
+          <th>TYPE</th>
+          <td>甘え上手♡ 聞き上手</td>
+        </tr>
+      </table>
+
+      <div class="profile-comment">
+        お話しするのが大好きです。<br>
+        来てくれた人の一番になりたいな。<br>
+        プロフ隅々まで見てくれた方、<br>
+        ありがとう(⋈◍＞◡＜◍)。
+      </div>
+
+      <!-- 謎①：白テキスト（ドラッグで見える） -->
+      <div class="hidden-sos">たすけてください /logs/ 誕生日で開けて</div>
+
+      <!-- TRUE END後メッセージ -->
+      <div class="true-end-message" id="true-end-msg">
+        やっとちゃんと眠れた。<br>
+        来てくれてありがとうね。
+      </div>
+
+      <a class="back-link" href="../cast.html">← GIRLS LIST</a>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; TOKYO MIDNIGHT GIRLS CLUB &nbsp;|&nbsp; ALL RIGHTS RESERVED
+  </footer>
+
+  <script>
+    if (localStorage.getItem('tmgc_end') === 'true') {
+      document.getElementById('true-end-msg').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLOG | TOKYO MIDNIGHT GIRLS CLUB</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0a0a0a; color: #f0e8e0; font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif; min-height: 100vh; }
+    header { text-align: center; padding: 40px 20px 20px; border-bottom: 1px solid #2a1a1a; }
+    .site-title { font-size: 13px; letter-spacing: 6px; color: #c8a0a0; text-transform: uppercase; margin-bottom: 6px; }
+    nav { display: flex; justify-content: center; gap: 32px; padding: 16px 20px; border-bottom: 1px solid #1a0a0a; }
+    nav a { color: #c8a0a0; text-decoration: none; font-size: 11px; letter-spacing: 2px; transition: color 0.2s; }
+    nav a:hover { color: #f0c0c0; }
+
+    .blog-section {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: #6a4a4a;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .blog-list { list-style: none; }
+
+    .blog-item {
+      border-bottom: 1px solid #1a0a0a;
+      padding: 24px 0;
+    }
+
+    .blog-item:first-child { border-top: 1px solid #1a0a0a; }
+
+    .blog-meta {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .blog-author {
+      font-size: 10px;
+      color: #c8a0a0;
+      letter-spacing: 1px;
+    }
+
+    .blog-date {
+      font-size: 9px;
+      color: #4a3a3a;
+    }
+
+    .blog-title {
+      font-size: 14px;
+      color: #e0d0c0;
+      margin-bottom: 8px;
+      text-decoration: none;
+      display: block;
+      transition: color 0.2s;
+    }
+
+    .blog-title:hover { color: #f0c0c0; }
+
+    .blog-excerpt {
+      font-size: 11px;
+      color: #6a5a5a;
+      line-height: 1.8;
+    }
+
+    /* BAD END A後 */
+    .bad-end-post {
+      display: none;
+      border: 1px solid #2a0a0a;
+      background: #120505;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    footer { text-align: center; padding: 32px; border-top: 1px solid #1a0a0a; font-size: 9px; color: #3a2a2a; letter-spacing: 2px; margin-top: 32px; }
+  </style>
+</head>
+<body>
+  <header><div class="site-title">TOKYO MIDNIGHT GIRLS CLUB</div></header>
+  <nav>
+    <a href="../index.html">HOME</a>
+    <a href="../cast.html">GIRLS</a>
+    <a href="index.html">BLOG</a>
+  </nav>
+
+  <section class="blog-section">
+    <div class="section-label">BLOG</div>
+
+    <!-- BAD END A後：あすかからの謎のお礼記事 -->
+    <div class="bad-end-post" id="bad-end-post">
+      <div class="blog-meta">
+        <span class="blog-author">天使♡あすか</span>
+        <span class="blog-date">2024.05.10</span>
+      </div>
+      <a class="blog-title">情報のご提供、ありがとうございます♡</a>
+      <div class="blog-excerpt">大切に保管します。</div>
+    </div>
+
+    <ul class="blog-list">
+      <li class="blog-item">
+        <div class="blog-meta">
+          <span class="blog-author">天使♡あすか</span>
+          <span class="blog-date">2024.05.03</span>
+        </div>
+        <a class="blog-title" href="asuka_suzune.html">すずねちゃん、ありがとう！</a>
+        <div class="blog-excerpt">すずねちゃんが新しいステージに挑戦することになりました！</div>
+      </li>
+      <li class="blog-item">
+        <div class="blog-meta">
+          <span class="blog-author">もえにゃ</span>
+          <span class="blog-date">2024.05.01</span>
+        </div>
+        <a class="blog-title" href="moenia_suzune.html">すずねちゃんへ</a>
+        <div class="blog-excerpt">すずねちゃん、読んでたら返事ちょうだいね。</div>
+      </li>
+      <li class="blog-item">
+        <div class="blog-meta">
+          <span class="blog-author">すずね</span>
+          <span class="blog-date">2024.04.28</span>
+        </div>
+        <a class="blog-title" href="suzune_last.html">元気だよ〜！</a>
+        <div class="blog-excerpt">最近いろいろあったけど元気！来週からちょっと新しいことはじまるかも〜</div>
+      </li>
+      <li class="blog-item">
+        <div class="blog-meta">
+          <span class="blog-author">けみぃ</span>
+          <span class="blog-date">2024.04.20</span>
+        </div>
+        <a class="blog-title" href="kemii_doubt.html">最近ちょっと気になること</a>
+        <div class="blog-excerpt">最近お店の雰囲気がなんか変わった気がしてる。</div>
+      </li>
+    </ul>
+  </section>
+
+  <footer>&copy; TOKYO MIDNIGHT GIRLS CLUB &nbsp;|&nbsp; ALL RIGHTS RESERVED</footer>
+
+  <script>
+    if (localStorage.getItem('tmgc_end') === 'bad_a') {
+      document.getElementById('bad-end-post').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

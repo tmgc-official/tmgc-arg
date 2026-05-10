@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIRLS | TOKYO MIDNIGHT GIRLS CLUB</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0a0a0a; color: #f0e8e0; font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif; min-height: 100vh; }
+    header { text-align: center; padding: 40px 20px 20px; border-bottom: 1px solid #2a1a1a; }
+    .site-title { font-size: 13px; letter-spacing: 6px; color: #c8a0a0; text-transform: uppercase; margin-bottom: 6px; }
+    nav { display: flex; justify-content: center; gap: 32px; padding: 16px 20px; border-bottom: 1px solid #1a0a0a; }
+    nav a { color: #c8a0a0; text-decoration: none; font-size: 11px; letter-spacing: 2px; transition: color 0.2s; }
+    nav a:hover { color: #f0c0c0; }
+
+    .cast-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: #6a4a4a;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .cast-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+
+    .cast-card {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .cast-card:hover .cast-name { color: #f0c0c0; }
+
+    .cast-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(160deg, #1a0f0f 0%, #2a1520 100%);
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .cast-photo img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85) saturate(0.7); }
+
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .photo-placeholder span { font-size: 9px; color: #3a2a2a; }
+
+    .cast-name { font-size: 12px; color: #c8a0a0; letter-spacing: 1px; margin-bottom: 3px; transition: color 0.2s; }
+    .cast-age { font-size: 10px; color: #6a4a4a; margin-bottom: 3px; }
+    .cast-tag { font-size: 9px; color: #4a3a3a; }
+
+    footer { text-align: center; padding: 32px; border-top: 1px solid #1a0a0a; font-size: 9px; color: #3a2a2a; letter-spacing: 2px; margin-top: 32px; }
+  </style>
+</head>
+<body>
+  <header><div class="site-title">TOKYO MIDNIGHT GIRLS CLUB</div></header>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="cast.html">GIRLS</a>
+    <a href="blog/index.html">BLOG</a>
+  </nav>
+
+  <section class="cast-section">
+    <div class="section-label">GIRLS</div>
+    <div class="cast-grid">
+
+      <a class="cast-card" href="profiles/moenia.html">
+        <div class="cast-photo"><img src="img/moenya_ice.png" alt="もえにゃ"></div>
+        <div class="cast-name">もえにゃ</div>
+        <div class="cast-age">19</div>
+        <div class="cast-tag">プラチナキャスト</div>
+      </a>
+
+      <a class="cast-card" href="profiles/asuka.html">
+        <div class="cast-photo"><img src="img/tenshiasuka_Bar.png" alt="天使♡あすか"></div>
+        <div class="cast-name">天使♡あすか</div>
+        <div class="cast-age">23</div>
+        <div class="cast-tag">No.1 ／ マネージャー</div>
+      </a>
+
+      <a class="cast-card" href="profiles/suzune.html">
+        <div class="cast-photo"><img src="img/suzune_uniform.jpg" alt="すずね"></div>
+        <div class="cast-name">すずね</div>
+        <div class="cast-age">20</div>
+        <div class="cast-tag">卒業</div>
+      </a>
+
+      <a class="cast-card" href="profiles/sara.html">
+        <div class="cast-photo"><div class="photo-placeholder"><span>photo</span></div></div>
+        <div class="cast-name">さら</div>
+        <div class="cast-age">21</div>
+        <div class="cast-tag">ゴールドキャスト</div>
+      </a>
+
+      <a class="cast-card" href="profiles/yuuna.html">
+        <div class="cast-photo"><div class="photo-placeholder"><span>photo</span></div></div>
+        <div class="cast-name">ゆうな</div>
+        <div class="cast-age">18</div>
+        <div class="cast-tag">ニューフェイス</div>
+      </a>
+
+    </div>
+  </section>
+
+  <footer>&copy; TOKYO MIDNIGHT GIRLS CLUB &nbsp;|&nbsp; ALL RIGHTS RESERVED</footer>
+</body>
+</html>

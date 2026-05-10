@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRUE END | TOKYO MIDNIGHT GIRLS CLUB</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0a0a0a;
+      color: #c0d0c0;
+      font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+    }
+
+    .end-wrap {
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .end-label {
+      font-size: 9px;
+      letter-spacing: 6px;
+      color: #405040;
+      margin-bottom: 32px;
+    }
+
+    .end-title {
+      font-size: 22px;
+      color: #80c080;
+      letter-spacing: 4px;
+      margin-bottom: 48px;
+      font-weight: normal;
+    }
+
+    .message-block {
+      background: #0a150a;
+      border: 1px solid #1a2a1a;
+      padding: 28px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .message-from {
+      font-size: 10px;
+      color: #405040;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .message-text {
+      font-size: 13px;
+      color: #80c080;
+      line-height: 2;
+    }
+
+    .top-link {
+      display: inline-block;
+      margin-top: 40px;
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: #405040;
+      text-decoration: none;
+      border: 1px solid #1a2a1a;
+      padding: 10px 24px;
+      transition: all 0.2s;
+    }
+
+    .top-link:hover { color: #80c080; border-color: #405040; }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    .fade-in:nth-child(1) { animation-delay: 0.5s; }
+    .fade-in:nth-child(2) { animation-delay: 1.5s; }
+    .fade-in:nth-child(3) { animation-delay: 2.5s; }
+    .fade-in:nth-child(4) { animation-delay: 4s; }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="end-wrap">
+    <div class="end-label fade-in">T R U E &nbsp; E N D</div>
+    <div class="end-title fade-in">ありがとう</div>
+
+    <div class="message-block fade-in">
+      <div class="message-from">すずね より</div>
+      <div class="message-text">
+        また会える日を楽しみにしてます。<br>
+        ありがとう。
+      </div>
+    </div>
+
+    <div class="message-block fade-in">
+      <div class="message-from">もえにゃ より</div>
+      <div class="message-text">
+        やっとちゃんと眠れた。<br>
+        来てくれてありがとうね。
+      </div>
+    </div>
+
+    <a class="top-link fade-in" href="index.html">← TOP</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOKYO MIDNIGHT GIRLS CLUB</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0a0a0a;
+      color: #f0e8e0;
+      font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ヘッダー */
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+      border-bottom: 1px solid #2a1a1a;
+    }
+
+    .site-title {
+      font-size: 13px;
+      letter-spacing: 6px;
+      color: #c8a0a0;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .site-subtitle {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: #6a4a4a;
+    }
+
+    /* ナビ */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      padding: 16px 20px;
+      border-bottom: 1px solid #1a0a0a;
+    }
+
+    nav a {
+      color: #c8a0a0;
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 2px;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: #f0c0c0; }
+
+    /* ギャラリー */
+    .gallery-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 20px;
+    }
+
+    .gallery-label {
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: #6a4a4a;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+    }
+
+    .gallery-item {
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: #1a0f0f;
+      position: relative;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.85) saturate(0.7);
+      transition: filter 0.3s;
+    }
+
+    .gallery-item:hover img {
+      filter: brightness(1) saturate(0.9);
+    }
+
+    /* ギャラリープレースホルダー（画像なし時） */
+    .gallery-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(160deg, #1a0f0f 0%, #2a1520 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gallery-placeholder span {
+      font-size: 9px;
+      color: #3a2a2a;
+      letter-spacing: 1px;
+    }
+
+    /* キャストセクション */
+    .cast-preview {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px 64px;
+    }
+
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: #6a4a4a;
+      text-align: center;
+      margin-bottom: 32px;
+      padding-top: 48px;
+      border-top: 1px solid #1a0a0a;
+    }
+
+    .cast-row {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .cast-card {
+      width: 140px;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .cast-card:hover .cast-name { color: #f0c0c0; }
+
+    .cast-photo {
+      width: 140px;
+      height: 180px;
+      background: linear-gradient(160deg, #1a0f0f 0%, #2a1520 100%);
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .cast-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.85) saturate(0.7);
+    }
+
+    .cast-name {
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: #c8a0a0;
+      margin-bottom: 4px;
+      transition: color 0.2s;
+    }
+
+    .cast-age {
+      font-size: 10px;
+      color: #6a4a4a;
+    }
+
+    /* フッター */
+    footer {
+      text-align: center;
+      padding: 32px;
+      border-top: 1px solid #1a0a0a;
+      font-size: 9px;
+      color: #3a2a2a;
+      letter-spacing: 2px;
+    }
+
+    /* 休業のお知らせ（TRUE END後） */
+    .closure-notice {
+      display: none;
+      background: #1a0505;
+      border: 1px solid #4a1a1a;
+      padding: 20px;
+      text-align: center;
+      margin: 20px auto;
+      max-width: 600px;
+      font-size: 12px;
+      color: #c08080;
+      letter-spacing: 1px;
+      line-height: 2;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="site-title">TOKYO MIDNIGHT GIRLS CLUB</div>
+    <div class="site-subtitle">girls bar &#x2715; private lounge</div>
+  </header>
+
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="cast.html">GIRLS</a>
+    <a href="blog/index.html">BLOG</a>
+  </nav>
+
+  <!-- TRUE END後に表示 -->
+  <div class="closure-notice" id="closure-notice">
+    休業のお知らせ<br>
+    <span style="font-size:10px; color:#8a6060;">諸般の事情により、当店は当面の間休業いたします。<br>長らくご愛顧いただき、ありがとうございました。</span>
+  </div>
+
+  <!-- ギャラリー -->
+  <section class="gallery-section">
+    <div class="gallery-label">GALLERY</div>
+    <div class="gallery-grid">
+      <!-- altタグは旧版の謎①用。現在は白テキスト方式に変更済み -->
+      <div class="gallery-item">
+        <div class="gallery-placeholder"><span>photo</span></div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder"><span>photo</span></div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder"><span>photo</span></div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder"><span>photo</span></div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder"><span>photo</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- キャストプレビュー -->
+  <section class="cast-preview">
+    <div class="section-label">GIRLS</div>
+    <div class="cast-row">
+      <a class="cast-card" href="profiles/moenia.html">
+        <div class="cast-photo">
+          <img src="img/moenya_ice.png" alt="もえにゃ">
+        </div>
+        <div class="cast-name">もえにゃ</div>
+        <div class="cast-age">19</div>
+      </a>
+      <a class="cast-card" href="profiles/asuka.html">
+        <div class="cast-photo">
+          <img src="img/tenshiasuka_Bar.png" alt="天使♡あすか">
+        </div>
+        <div class="cast-name">天使♡あすか</div>
+        <div class="cast-age">23</div>
+      </a>
+      <a class="cast-card" href="profiles/suzune.html">
+        <div class="cast-photo">
+          <img src="img/suzune_uniform.jpg" alt="すずね">
+        </div>
+        <div class="cast-name">すずね</div>
+        <div class="cast-age">20</div>
+      </a>
+      <a class="cast-card" href="profiles/sara.html">
+        <div class="cast-photo">
+          <div class="gallery-placeholder"><span>さら</span></div>
+        </div>
+        <div class="cast-name">さら</div>
+        <div class="cast-age">21</div>
+      </a>
+      <a class="cast-card" href="profiles/yuuna.html">
+        <div class="cast-photo">
+          <div class="gallery-placeholder"><span>ゆうな</span></div>
+        </div>
+        <div class="cast-name">ゆうな</div>
+        <div class="cast-age">18</div>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; TOKYO MIDNIGHT GIRLS CLUB &nbsp;|&nbsp; ALL RIGHTS RESERVED
+  </footer>
+
+  <script>
+    // TRUE END後の演出
+    if (localStorage.getItem('tmgc_end') === 'true') {
+      document.getElementById('closure-notice').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
