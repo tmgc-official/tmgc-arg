@@ -191,6 +191,12 @@
 
     .blink { animation: blink 1.2s step-end infinite; }
     @keyframes blink { 50% { opacity: 0; } }
+
+    @media (max-width: 640px) {
+      body { padding: 16px; align-items: flex-start; }
+      .input-row { flex-direction: column; }
+      button { width: 100%; }
+    }
   </style>
 </head>
 <body>

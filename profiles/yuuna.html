@@ -28,6 +28,12 @@
     .back-link { display: inline-block; font-size: 10px; letter-spacing: 2px; color: #6a4a6a; text-decoration: none; margin-top: 24px; transition: color 0.2s; }
     .back-link:hover { color: #b090c0; }
     footer { text-align: center; padding: 32px; border-top: 1px solid #1a0a0a; font-size: 9px; color: #3a2a2a; letter-spacing: 2px; margin-top: 32px; }
+    @media (max-width: 640px) {
+      .profile-wrap { flex-direction: column; align-items: center; padding: 32px 16px; gap: 24px; }
+      .profile-photo { width: 180px; }
+      .profile-info { width: 100%; }
+      nav { gap: 20px; }
+    }
   </style>
 </head>
 <body>

@@ -180,6 +180,14 @@
       letter-spacing: 2px;
     }
 
+    @media (max-width: 640px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 4px; }
+      .cast-row { flex-wrap: wrap; justify-content: center; }
+      .cast-card { width: 42vw; max-width: 160px; }
+      nav { gap: 20px; }
+      .gallery-section, .cast-preview { padding-left: 12px; padding-right: 12px; }
+    }
+
     /* 休業のお知らせ（TRUE END後） */
     .closure-notice {
       display: none;

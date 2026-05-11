@@ -52,6 +52,11 @@
     .fade-in:nth-child(3) { animation-delay: 4s; }
     .fade-in:nth-child(4) { animation-delay: 5.5s; }
     @keyframes fadeIn { to { opacity: 1; } }
+
+    @media (max-width: 640px) {
+      body { align-items: flex-start; padding: 32px 16px; }
+      .blog-update { padding: 16px; }
+    }
   </style>
 </head>
 <body>
