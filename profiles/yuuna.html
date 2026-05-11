@@ -29,9 +29,10 @@
     .back-link:hover { color: #b090c0; }
     footer { text-align: center; padding: 32px; border-top: 1px solid #1a0a0a; font-size: 9px; color: #3a2a2a; letter-spacing: 2px; margin-top: 32px; }
     @media (max-width: 640px) {
-      .profile-wrap { flex-direction: column; align-items: center; padding: 32px 16px; gap: 24px; }
-      .profile-photo { width: 180px; }
-      .profile-info { width: 100%; }
+      .profile-wrap { flex-direction: column; align-items: stretch; padding: 0 0 48px; gap: 0; }
+      .profile-photo { width: 100%; }
+      .profile-photo img { filter: brightness(0.9) saturate(0.75); }
+      .profile-info { width: 100%; padding: 24px 20px 0; }
       nav { gap: 20px; }
     }
   </style>
